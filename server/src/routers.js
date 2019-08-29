@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { checkDuplicate } from './helpers'
 
 export const getCharacterByFilm = (req, res) => {
   Axios.get(`https://swapi.co/api/films/?search=${req.params.term}`)
