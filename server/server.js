@@ -1,4 +1,5 @@
 import express from 'express'
+import { getCharacterByFilm } from './src/routers'
 
 const app = express()
 const port = 3000
