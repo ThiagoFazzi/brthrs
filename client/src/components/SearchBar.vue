@@ -50,6 +50,7 @@ export default {
 .search-bar {
   width: 90vw;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 .search-bar input {
