@@ -1,7 +1,18 @@
 <template>
   <div class="list">
     <ul>
-      <ListItem v-for="item in list" :key="item.url" :name="item.name" :height="item.height" />
+      <ListItem
+        v-for="item in list"
+        :key="item.url"
+        :name="item.name"
+        :height="item.height"
+        :gender="item.gender"
+        :mass="item.mass"
+        :skinColor="item.skinColor"
+        :hairColor="item.hairColor"
+        :eyeColor="item.eyeColor"
+        :birthYear="item.birthYear"
+      />
     </ul>
   </div>
 </template>
