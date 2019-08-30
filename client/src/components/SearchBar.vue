@@ -28,7 +28,6 @@ export default {
           .then(result => {
             if (result.data.length === 0) {
               this.$emit("getMessage", "Not Found");
-              //this.message = "Not Found";
               //this.loading = false;
             } else {
               this.$emit("getMessage", "");
@@ -41,7 +40,6 @@ export default {
           .catch(console.error);
       } else {
         this.$emit("getMessage", "Type a name of film");
-        //this.message = "Type a name of film";
       }
     }
   }
