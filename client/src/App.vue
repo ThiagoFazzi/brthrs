@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Layout />
+    <Layout class="layout" />
   </div>
 </template>
 
@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style>
+.layout {
+  width: 100vw;
+}
 </style>
