@@ -1,16 +1,24 @@
 <template>
   <div>
     <Header />
+    <SearchBar @getFilmTerm="filmTerm = $event" />
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue";
+import SearchBar from "./SearchBar.vue";
 
 export default {
   name: "Layout",
   components: {
-    Header
+    Header,
+    SearchBar
+  },
+  data() {
+    return {
+      filmTerm: ""
+    };
   }
 };
 </script>
