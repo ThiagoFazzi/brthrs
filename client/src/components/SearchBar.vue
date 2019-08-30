@@ -34,7 +34,6 @@ export default {
               this.$emit("getMessage", "");
               this.characters = result.data;
               this.$emit("getListCharacters", this.characters);
-              console.log(this.characters);
               this.$emit("setSpinner", false);
             }
           })
