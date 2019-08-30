@@ -20,6 +20,7 @@ export default {
   methods: {
     fetchCharactersByFilm(event) {
       this.characters = [];
+      this.$emit("getListCharacters", this.characters);
       this.$emit("getMessage", "");
       if (this.term) {
         this.$emit("setSpinner", true);
