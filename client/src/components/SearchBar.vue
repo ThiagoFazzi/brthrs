@@ -1,21 +1,48 @@
 <template>
   <div class="search-bar">
     <input v-model="term" type="search" placeholder="type the name of Star Wars film" />
-    <button @click="getTerm">Search</button>
+    <button @click="fetchCharactersByFilm">Search</button>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "SearchBar",
+  props: ["filters"],
   data() {
     return {
-      term: ""
+      term: "",
+      characters: []
     };
   },
   methods: {
-    getTerm(event) {
-      this.$emit("getFilmTerm", this.term);
+    fetchCharactersByFilm(event) {
+      this.characters = [];
+      this.$emit("getMessage", "");
+      if (this.term) {
+        //this.loading = true;
+        axios
+          .get(`http://localhost:3000/films/${this.term}/${this.filters}`)
+          .then(result => {
+            if (result.data.length === 0) {
+              this.$emit("getMessage", "Not Found");
+              //this.message = "Not Found";
+              //this.loading = false;
+            } else {
+              this.$emit("getMessage", "");
+              this.characters = result.data;
+              this.$emit("getListCharacters", this.characters);
+              console.log(this.characters);
+              //this.loading = false;
+            }
+          })
+          .catch(console.error);
+      } else {
+        this.$emit("getMessage", "Type a name of film");
+        //this.message = "Type a name of film";
+      }
     }
   }
 };
