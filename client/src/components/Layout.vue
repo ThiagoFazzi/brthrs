@@ -1,8 +1,17 @@
-<template></template>
+<template>
+  <div>
+    <Header />
+  </div>
+</template>
 
 <script>
+import Header from "./Header.vue";
+
 export default {
-  name: "Layout"
+  name: "Layout",
+  components: {
+    Header
+  }
 };
 </script>
 
