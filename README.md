@@ -18,6 +18,8 @@
 - yarn install
 - yarn serve
 
+open your Browser and type http://localhost:8080 in the url bar.
+
 # Technologies applied on Backend(Server):
 
 - NodeJs
