@@ -20,21 +20,22 @@ export default {
   methods: {
     fetchCharactersByFilm(event) {
       this.characters = [];
+      this.$emit("getListCharacters", this.characters);
       this.$emit("getMessage", "");
       if (this.term) {
-        //this.loading = true;
+        this.$emit("setSpinner", true);
         axios
           .get(`http://localhost:3000/films/${this.term}/${this.filters}`)
           .then(result => {
             if (result.data.length === 0) {
               this.$emit("getMessage", "Not Found");
-              //this.loading = false;
+              this.$emit("setSpinner", false);
             } else {
               this.$emit("getMessage", "");
               this.characters = result.data;
               this.$emit("getListCharacters", this.characters);
               console.log(this.characters);
-              //this.loading = false;
+              this.$emit("setSpinner", false);
             }
           })
           .catch(console.error);
