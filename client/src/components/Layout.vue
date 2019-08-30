@@ -1,9 +1,13 @@
 <template>
   <div>
     <Header />
-    <SearchBar @getFilmTerm="filmTerm = $event" />
+    <SearchBar
+      @getListCharacters="charactersList = $event"
+      @getMessage="message = $event"
+      :filters="filters"
+    />
     <Filters @getFilters="filters = $event" />
-    <Message :textMessage="filmTerm" />
+    <Message :textMessage="message" />
     <List :list="charactersList" />
   </div>
 </template>
@@ -26,13 +30,9 @@ export default {
   },
   data() {
     return {
-      filmTerm: "",
       filters: "",
-      charactersList: [
-        { name: "t1", height: "t1", url: "t1" },
-        { name: "t2", height: "t2", url: "t2" },
-        { name: "t3", height: "t3", url: "t3" }
-      ]
+      message: "",
+      charactersList: []
     };
   }
 };
