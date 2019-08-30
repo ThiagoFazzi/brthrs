@@ -4,6 +4,7 @@
     <SearchBar @getFilmTerm="filmTerm = $event" />
     <Filters @getFilters="filters = $event" />
     <Message :textMessage="filmTerm" />
+    <List :list="charactersList" />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from "./Header.vue";
 import SearchBar from "./SearchBar.vue";
 import Filters from "./Filters.vue";
 import Message from "./Message";
+import List from "./List";
 
 export default {
   name: "Layout",
@@ -19,12 +21,14 @@ export default {
     Header,
     SearchBar,
     Filters,
-    Message
+    Message,
+    List
   },
   data() {
     return {
       filmTerm: "",
-      filters: ""
+      filters: "",
+      charactersList: []
     };
   }
 };
