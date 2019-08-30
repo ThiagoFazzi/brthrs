@@ -1,13 +1,22 @@
 <template>
-  <div></div>
+  <div>
+    <Layout class="layout" />
+  </div>
 </template>
 
 <script>
+import Layout from "./components/Layout.vue";
+
 export default {
   name: "app",
-  components: {}
+  components: {
+    Layout
+  }
 };
 </script>
 
 <style>
+.layout {
+  width: 100vw;
+}
 </style>
