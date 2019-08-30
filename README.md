@@ -12,9 +12,20 @@
 - yarn install
 - yarn start
 
+3 - Frontend starter
+
+- cd client
+- yarn install
+- yarn serve
+
 # Technologies applied on Backend(Server):
 
 - NodeJs
 - ExpressJs
 - Axios
 - Cors
+
+# Technologies applied on Frontend(Client):
+
+- VueJS and Vue CLI
+- Axios
