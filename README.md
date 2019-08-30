@@ -4,6 +4,8 @@
 
 1 - Clone project
 
+- cd brthrs
+
 2 - Backend starter
 
 - cd server
