@@ -28,7 +28,11 @@ export default {
     return {
       filmTerm: "",
       filters: "",
-      charactersList: []
+      charactersList: [
+        { name: "t1", height: "t1", url: "t1" },
+        { name: "t2", height: "t2", url: "t2" },
+        { name: "t3", height: "t3", url: "t3" }
+      ]
     };
   }
 };

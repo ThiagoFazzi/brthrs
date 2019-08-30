@@ -1,12 +1,19 @@
 <template>
-  <div class="list" v-if="!list">
-    <ul></ul>
+  <div class="list">
+    <ul>
+      <ListItem v-for="item in list" :key="item.url" :name="item.name" :height="item.height" />
+    </ul>
   </div>
 </template>
 
 <script>
+import ListItem from "./ListItem";
+
 export default {
   name: "List",
+  components: {
+    ListItem
+  },
   props: ["list"]
 };
 </script>
